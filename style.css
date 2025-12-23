@@ -129,7 +129,7 @@ h1 {
 
 /* Responsividade para telas pequenas */
 @media (max-width: 600px) {
-  :root { --small-gap: 6px; --max-board: 390px; }
+  :root { --small-gap: 6px; }
 
   .grid {
     grid-template-columns: repeat(3, 63px);
@@ -140,13 +140,14 @@ h1 {
     justify-items: center;
   }
 
+  /* Agora o container das peças vira um grid 3x3 */
   #pieces {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    grid-template-rows: repeat(3, auto);   /* 3 linhas */
     gap: var(--small-gap);
     justify-content: center;
-    width: min(var(--max-board), 96vw);
+    width: min(300px, 96vw); /* largura máxima */
     margin: 12px auto;
   }
 
@@ -154,6 +155,8 @@ h1 {
     width: 63px; height: 63px;
     font-size: 10px;
   }
+
   .piece { margin: 0; }
   .label { font-size: 14px; }
 }
+
