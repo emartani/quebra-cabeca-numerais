@@ -153,7 +153,7 @@ h1 {
 
   .cell, .piece {
     width: 63px; height: 63px;
-    font-size: 10px;
+    font-size: 13px;
   }
 
   .piece { margin: 0; }
