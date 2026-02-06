@@ -70,11 +70,13 @@ function startGame() {
       if (draggedAnswer === cell.dataset.answer && !cell.classList.contains("correct")) {
         cell.classList.add("correct");
         cell.textContent = "";
-        const row = Math.floor(pieceIndex / 3);
-        const col = pieceIndex % 3;
+        const cellIndex = parseInt(cell.dataset.index, 10);
+        const row = Math.floor(cellIndex / 3);
+        const col = cellIndex % 3;
         cell.style.backgroundImage = `url(${imgURL})`;
         cell.style.backgroundSize = '300% 300%';
         cell.style.backgroundPosition = `${col * 50}% ${row * 50}%`;
+
         correctCount++;
         score += 10;
         soundAcerto.play();
